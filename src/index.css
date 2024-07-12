@@ -1,0 +1,154 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blockchain-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 80vh; /* Ensure enough space for block details */
+}
+
+.blockchain-container {
+  max-width: 80vw;
+  overflow-x: hidden;
+  margin-top: 20px;
+  white-space: nowrap;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: grab;
+  user-select: none; /* Disable text selection */
+}
+
+.blockchain-container:active {
+  cursor: grabbing;
+}
+
+.blockchain {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.block {
+  width: 100px;
+  height: 100px;
+  margin: 0 10px;
+  background-color: #4caf50;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+  user-select: none; /* Disable text selection */
+}
+
+.block::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 20px;
+  height: 2px;
+  background-color: #4caf50;
+}
+
+.block:last-child::after {
+  content: none;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.block-details {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 10px;
+  width: 50vw;
+  /* min-width: 50vw; */
+  /* max-width: 80vw; */
+  text-align: left;
+  visibility: hidden; /* Keep the space reserved */
+}
+
+.block-details.active {
+  visibility: visible;
+}
+
+.block-details p {
+  margin: 10px 0;
+}
+
+/* Hide scrollbars for the blockchain container */
+.blockchain-container::-webkit-scrollbar {
+  display: none;
+}
+
+.blockchain-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.data {
+  font-size: 1.1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+}
+
+.card div {
+  display: grid;
+  grid-template-columns: 12rem auto;
+}
+.bold {
+  font-weight: 600;
+}
+
+.aadhar {
+  font-size: 1.1rem;
+}
+
+.block-details h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
